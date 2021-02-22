@@ -1,0 +1,21 @@
+.navbar {
+  height: 70px !important;
+}
+
+.navbar__black {
+  color: black !important;
+}
+
+.navbar a {
+  color: #333 !important;
+}
+
+.dropdown-item.active {
+  color: white !important;
+}
+
+/* .navbar__black:hover {
+  background-color: #e8f5fe !important;
+  border-bottom: blue 4px solid;
+  transition: color 100ms ease-out !important;
+} */
