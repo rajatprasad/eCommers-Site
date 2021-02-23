@@ -30,7 +30,7 @@ const Header = () => {
             <Nav className='ml-auto navbar__black'>
               <LinkContainer to='/cart'>
                 <Nav.Link >
-                  <i className='fas fa-shopping-cart'></i> Cart
+                  <i className='fas fa-shopping-bag navbar__cart'></i> Cart
                 </Nav.Link>
               </LinkContainer>
               {userInfo ? (

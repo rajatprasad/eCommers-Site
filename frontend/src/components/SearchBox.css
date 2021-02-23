@@ -1,0 +1,9 @@
+.search__form {
+  border-radius: 50px;
+}
+
+.search__button {
+  border-radius: 4px;
+  font-size: 20px;
+  background-color: coral;
+}
