@@ -1,8 +1,10 @@
 import React from 'react'
+import './Rating.css'
 
 const Rating = ({ value, text, color }) => {
   return (
     <div className='rating'>
+      <div>
       <span>
         <i
           style={{ color }}
@@ -63,13 +65,15 @@ const Rating = ({ value, text, color }) => {
           }
         ></i>
       </span>
-      <span>{text && text}</span>
+      </div>
+      <div>{text && text}</div>
     </div>
   )
 }
 
 Rating.defaultProps = {
-  color: '#f8e825',
+  // color: '#f8e825',
+  color:'#FDCC0D',
 }
 
 export default Rating

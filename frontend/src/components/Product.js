@@ -11,14 +11,14 @@ const Product = ({ product }) => {
         <Card.Img className="product__img" src={product.image} variant='top' />
       </Link>
 
-      <Card.Body>
+      <Card.Body className="product__cardbody">
         <Link to={`/product/${product._id}`}>
-          <Card.Title as='div'>
-            <strong>{product.name}</strong>
+          <Card.Title className="product__name" as='div'>
+            {product.name}
           </Card.Title>
         </Link>
 
-        <Card.Text as='div'>
+        <Card.Text className="product__rating" as='div'>
           <Rating
             value={product.rating}
             text={`${product.numReviews} reviews`}

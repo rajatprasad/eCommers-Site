@@ -1,9 +1,11 @@
 .search__form {
-  border-radius: 50px;
+  border-radius: 4px;
+  height: 40px;
 }
 
 .search__button {
   border-radius: 4px;
-  font-size: 20px;
-  background-color: coral;
+  color: white;
+  background: #f54642;
+  border: none !important;
 }

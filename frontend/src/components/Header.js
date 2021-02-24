@@ -21,18 +21,21 @@ const Header = () => {
     <header>
       <Navbar className="navbar" expand='lg' collapseOnSelect>
         <Container>
+        <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <LinkContainer to='/'>
-            <Navbar.Brand>Tickly Tots</Navbar.Brand>
+            <Navbar.Brand>
+               Tickly Tots
+              </Navbar.Brand>
           </LinkContainer>
-          <Navbar.Toggle aria-controls='basic-navbar-nav' />
+          {/* <Navbar.Toggle aria-controls='basic-navbar-nav' /> */}
           <Navbar.Collapse id='basic-navbar-nav'>
             <Route render={({ history }) => <SearchBox history={history} />} />
             <Nav className='ml-auto navbar__black'>
-              <LinkContainer to='/cart'>
+              {/* <LinkContainer to='/cart'>
                 <Nav.Link >
                   <i className='fas fa-shopping-bag navbar__cart'></i> Cart
                 </Nav.Link>
-              </LinkContainer>
+              </LinkContainer> */}
               {userInfo ? (
                 <NavDropdown className="navbar__black" title={userInfo.name} id='username'>
                   <LinkContainer to='/profile'>
@@ -64,6 +67,11 @@ const Header = () => {
               )}
             </Nav>
           </Navbar.Collapse>
+          <LinkContainer to='/cart'>
+                <Nav.Link >
+                  <i className='fas fa-shopping-bag navbar__cart'></i> Cart
+                </Nav.Link>
+              </LinkContainer>
         </Container>
       </Navbar>
     </header>

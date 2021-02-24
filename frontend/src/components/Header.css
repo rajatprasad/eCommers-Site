@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
 .navbar {
   background-color: white;
   padding-bottom: 5px;
@@ -15,11 +17,15 @@
 }
 
 .navbar__cart {
-  font-size: px;
+  /* font-size: px; */
 }
 
 .navbar-toggler {
   border: none;
+}
+
+.nav-link {
+  /* padding-bottom: 15px; */
 }
 
 .form-inline {
@@ -36,16 +42,24 @@ textarea {
   margin-bottom: 10px;
   margin-left: 5px;
   margin-right: 5px;
-  /* margin-top: 5px; */
+  margin-top: 5px;
 }
 
 .navbar-brand {
-  padding-bottom: 15px;
+  /* padding-bottom: 15px; */
+  font-family: "Lobster", cursive;
+  font-size: 30px;
+  font-weight: normal;
+  text-transform: none;
+  margin-right: 0rem;
+  padding-right: 10px;
+  padding-left: 20px;
+  -webkit-font-smoothing: antialiased;
 }
 
-.navbar__black {
+/* .navbar__black {
   color: black !important;
-}
+} */
 
 .navbar a {
   color: #333 !important;
@@ -54,9 +68,3 @@ textarea {
 .dropdown-item.active {
   color: white !important;
 }
-
-/* .navbar__black:hover {
-  background-color: #e8f5fe !important;
-  border-bottom: blue 4px solid;
-  transition: color 100ms ease-out !important;
-} */
