@@ -3,7 +3,7 @@ import './Rating.css'
 
 const Rating = ({ value, text, color }) => {
   return (
-    <div className='rating'>
+    <div className='rating my-2'>
       <div>
       <span>
         <i

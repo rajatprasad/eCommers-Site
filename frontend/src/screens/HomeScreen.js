@@ -10,6 +10,10 @@ import ProductCarousel from '../components/ProductCarousel'
 import Meta from '../components/Meta'
 import { listProducts } from '../actions/productActions'
 import './HomeScreen.css'
+import Zoom from 'react-reveal/Zoom';
+
+
+
 
 const HomeScreen = ({ match }) => {
   const keyword = match.params.keyword
@@ -49,7 +53,9 @@ const HomeScreen = ({ match }) => {
           <Row>
             {products.map((product) => (
               <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+                <Zoom duration={1100}> 
                 <Product product={product} />
+                </Zoom>
               </Col>
             ))}
           </Row>
