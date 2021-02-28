@@ -5,41 +5,104 @@ import './Footer.css'
 const Footer = () => {
   return (
   <div className="footer">
-    <footer class="site-footer">
-    <div class = "container">
-    <div class="grid-container">
-    <div class="grid-item">
-    <img src = " /images/logo.jpg" class = "logo-img"/>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 footer-column">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <span class="footer-title">Product</span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Product 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Product 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Plans & Prices</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Frequently asked questions</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4 footer-column">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <span class="footer-title">Company</span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Job postings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">News and articles</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4 footer-column">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <span class="footer-title">Contact & Support</span>
+          </li>
+          <li class="nav-item">
+            <span class="nav-link"><i class="fas fa-phone"></i>+47 45 80 80 80</span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-comments"></i>Live chat</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-envelope"></i>Contact us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-star"></i>Give feedback</a>
+          </li>
+        </ul>
+      </div>
     </div>
-		
-    <div class="grid-item inner-grid-container">
-    <div class="grid-item"><a href="">Tickly tots </a></div>   
-					<div class="grid-item"><a href="https://www.facebook.com/ticklytots/">About Us</a></div> 
 
-          <div class="grid-item"><a href="">Privacy Policy</a></div>   
-					<div class="grid-item"><a href="">Email Us</a></div>   
-					<div class="grid-item"><a href="mailto:vani.jain@gmail.com">vani.jain@gmail.com</a></div>   
-
-					{/* <div class="grid-item"><a href="">Finance</a></div>
-					<div class="grid-item"><a href="">Cookie Policy</a></div>   
-					<div class="grid-item"><a href="">Jobs </a></div> */}
-					
-          </div>
-
-
-          <div class="grid-item">
-					<div class = "social-buttons">
-						<a href= "https://www.instagram.com/invites/contact/?i=1212jq1qxz91o&utm_content=kher6ye"><i class="fab fa-instagram circle-icon"></i></a>
-						<a href= "https://www.facebook.com/ticklytots/"><i class="fab fa-facebook circle-icon"></i></a>
-						<a href= "https://api.whatsapp.com/send?phone=919999472912"><i class="fab fa-whatsapp circle-icon"></i></a>
-            
-					</div>
-				</div>   
-        <hr/>
-			<p>Copyright © 2021 | Tickly Tots | All rights reserved</p>
+    <div class="text-center"><i class="fas fa-ellipsis-h"></i></div>
+    
+    <div class="row text-center">
+      <div class="col-md-4 box">
+        <span class="copyright quick-links">Copyright &copy; Your Website <script>document.write(new Date().getFullYear())</script>
+        </span>
       </div>
+      <div class="col-md-4 box">
+        <ul class="list-inline social-buttons">
+          <li class="list-inline-item">
+            <a href="#">
+            <i class="fab fa-twitter"></i>
+          </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://www.instagram.com/invites/contact/?i=1212jq1qxz91o&utm_content=kher6ye">
+            <i class="fab fa-instagram"></i>
+          </a>
+          </li>
+        </ul>
       </div>
-    </footer>
+      <div class="col-md-4 box">
+        <ul class="list-inline quick-links">
+          <li class="list-inline-item">
+            <a href="#">Privacy Policy</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">Terms of Use</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
   </div>
   )
 }
