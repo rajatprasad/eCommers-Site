@@ -126,7 +126,7 @@ const ProductListScreen = ({ history, match }) => {
                     </Button>
                   </td>
                 </tr>
-              ))}
+              )).reverse()}
             </tbody>
           </Table>
           <Paginate pages={pages} page={page} isAdmin={true} />

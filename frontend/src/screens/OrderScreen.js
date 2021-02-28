@@ -6,6 +6,7 @@ import { Row, Col, ListGroup, Image, Card, Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
+import { CART_SAVE_PAYMENT_METHOD } from '../constants/cartConstants'
 import {
   getOrderDetails,
   payOrder,
@@ -15,6 +16,7 @@ import {
   ORDER_PAY_RESET,
   ORDER_DELIVER_RESET,
 } from '../constants/orderConstants'
+
 
 const OrderScreen = ({ match, history }) => {
   const orderId = match.params.id
@@ -195,6 +197,8 @@ const OrderScreen = ({ match, history }) => {
                   <Col>₹{order.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
+              { order.paymentMethod === "Cash On Delivery" ? <Button variant="success">  Order Placed via COD</Button>:""}
+              
               {!order.isPaid && (
                 <ListGroup.Item>
                   {loadingPay && <Loader />}
@@ -208,6 +212,7 @@ const OrderScreen = ({ match, history }) => {
                   )}
                 </ListGroup.Item>
               )}
+
               {loadingDeliver && <Loader />}
               {userInfo &&
                 userInfo.isAdmin &&
