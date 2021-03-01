@@ -80,7 +80,7 @@ const UserListScreen = ({ history }) => {
                   </Button>
                 </td>
               </tr>
-            ))}
+            )).reverse()}
           </tbody>
         </Table>
       )}
