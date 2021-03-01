@@ -195,6 +195,7 @@ const OrderScreen = ({ match, history }) => {
                   <Col>₹{order.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
+              
               {!order.isPaid && (
                 <ListGroup.Item>
                   {loadingPay && <Loader />}
@@ -208,6 +209,13 @@ const OrderScreen = ({ match, history }) => {
                   )}
                 </ListGroup.Item>
               )}
+              
+                <Button
+                type='button'
+                >
+                  COD
+                </Button>
+              
               {loadingDeliver && <Loader />}
               {userInfo &&
                 userInfo.isAdmin &&
