@@ -1,256 +1,96 @@
-<<<<<<< HEAD
-.footer {
-  font-family: system-ui;
-  background: #c0cbc0;
+a {
+  color: #6c757d;
+}
+
+a:hover {
+  color: #fec503;
+  text-decoration: none;
+}
+
+::selection {
+  background: #fec503;
+  text-shadow: none;
+}
+
+footer {
+  padding: 2rem 0;
+  background-color: #212529;
+}
+
+.footer-column:not(:first-child) {
+  padding-top: 2rem;
+}
+@media (min-width: 768px) {
+  .footer-column:not(:first-child) {
+    padding-top: 0rem;
+  }
+}
+
+.footer-column {
   text-align: center;
 }
-
-.site-footer {
-  margin-top: 150px; /* Remove */
-  position: relative;
-  background-color: #1a1f24;
-  width: 100%;
-  bottom: 0;
+.footer-column .nav-item .nav-link {
+  padding: 0.1rem 0;
 }
-
-.site-footer .container {
-  max-width: 85%;
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden;
-  padding-top: 20px;
+.footer-column .nav-item span.nav-link {
+  color: #6c757d;
 }
-
-.site-footer .container h1 {
-  font-size: 50px;
-}
-
-.site-footer .container h2 {
-  font-size: 50px;
-  float: right;
-}
-
-.site-footer .grid-container a {
-  color: #a2845c;
-  text-decoration: none;
-  font-size: 20px;
-  line-height: 16.25px;
-}
-
-.site-footer .grid-item {
-  padding: 10px;
-  color: #a2845c;
-}
-
-.site-footer .grid-container .inner-grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  text-align: left;
-}
-
-.site-footer .container hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #a2845c;
-  margin: 1px;
-  padding: 0;
-}
-
-.site-footer .container p {
+.footer-column .nav-item span.footer-title {
   font-size: 14px;
-  text-align: right;
-  color: #a2845c;
-  font-weight: 500;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
 }
-
-.site-footer .container .logo-img {
-  width: 180px;
-  height: 140px;
-  cursor: pointer;
+.footer-column .nav-item .fas {
+  margin-right: 0.5rem;
 }
-
-.site-footer .grid-container .grid-item .social-buttons {
-  padding-top: 20px;
+.footer-column ul {
+  display: inline-block;
 }
-
-.site-footer .grid-container .grid-item .social-buttons a {
-  display: inline-flex;
-  text-decoration: none;
-  font-size: 30px;
-  width: 60px;
-  height: 60px;
-  color: #1a1f24;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  margin: 0 8px;
-}
-
-.site-footer .grid-container .grid-item .social-buttons a i {
-  transition: 0.3s ease-in;
-}
-
-.site-footer .grid-container .grid-item .social-buttons a:hover i {
-  background: linear-gradient(45deg, #a2845c, #a2845c);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transform: scale(1.5);
-}
-
-.circle-icon {
-  background: #a2845c;
-  padding: 12px;
-  border-radius: 50%;
-}
-
-/*------------------------------------------------------------------
-  [ Screen Sizes] */
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  .site-footer {
-    height: 620px;
-    bottom: 0;
-  }
-
-  .site-footer .grid-container {
-    display: grid;
-    grid-template-columns: 400px;
-  }
-
-  .site-footer .grid-container .inner-grid-container {
-    display: grid;
-    grid-template-columns: auto auto;
-    text-align: left;
-    margin-top: 20px;
-    margin-right: 60px;
-  }
-
-  .site-footer .grid-container .grid-item .social-buttons {
-    margin-right: 50px;
-  }
-
-  .site-footer .container .logo-img {
-    margin-right: 60px;
-  }
-}
-
-/*========================================================*/
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  .site-footer {
-    height: 260px;
-    bottom: 0;
-  }
-
-  .site-footer .grid-container {
-    display: grid;
-    grid-template-columns: 350px auto 350px;
-  }
-
-  .site-footer .grid-container .inner-grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    text-align: left;
-  }
-}
-=======
-a {
-    color: #6c757d;
-  }
-  
-  a:hover {
-    color: #fec503;
-    text-decoration: none;
-  }
-  
-  ::selection {
-    background: #fec503;
-    text-shadow: none;
-  }
-  
-  footer {
-    padding: 2rem 0;
-    background-color: #212529;
-  }
-  
-  .footer-column:not(:first-child) {
-    padding-top: 2rem;
-  }
-  @media (min-width: 768px) {
-    .footer-column:not(:first-child) {
-      padding-top: 0rem;
-    }
-  }
-  
-  .footer-column {
-    text-align: center;
-  }
-  .footer-column .nav-item .nav-link {
-    padding: 0.1rem 0;
-  }
-  .footer-column .nav-item span.nav-link {
-    color: #6c757d;
-  }
-  .footer-column .nav-item span.footer-title {
-    font-size: 14px;
-    font-weight: 700;
-    color: #fff;
-    text-transform: uppercase;
-  }
-  .footer-column .nav-item .fas {
-    margin-right: 0.5rem;
-  }
+@media (min-width: 768px) {
   .footer-column ul {
-    display: inline-block;
+    text-align: left;
   }
-  @media (min-width: 768px) {
-    .footer-column ul {
-      text-align: left;
-    }
-  }
-  
-  ul.social-buttons {
-    margin-bottom: 0;
-  }
-  
-  ul.social-buttons li a:active,
-  ul.social-buttons li a:focus,
-  ul.social-buttons li a:hover {
-    background-color: #fec503;
-  }
-  
-  ul.social-buttons li a {
-    font-size: 20px;
-    line-height: 40px;
-    display: block;
-    width: 40px;
-    height: 40px;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
-    color: #fff;
-    border-radius: 100%;
-    outline: 0;
-    background-color: #1a1d20;
-  }
-  
-  footer .quick-links {
-    font-size: 90%;
-    line-height: 40px;
-    margin-bottom: 0;
-    text-transform: none;
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
-  
-  .copyright {
-    color: white;
-  }
-  
-  .fa-ellipsis-h {
-    color: white;
-    padding: 2rem 0;
-  }
->>>>>>> cbb8657bba7e608c125e7917009771fc371e848d
+}
+
+ul.social-buttons {
+  margin-bottom: 0;
+}
+
+ul.social-buttons li a:active,
+ul.social-buttons li a:focus,
+ul.social-buttons li a:hover {
+  background-color: #fec503;
+}
+
+ul.social-buttons li a {
+  font-size: 20px;
+  line-height: 40px;
+  display: block;
+  width: 40px;
+  height: 40px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  color: #fff;
+  border-radius: 100%;
+  outline: 0;
+  background-color: #1a1d20;
+}
+
+footer .quick-links {
+  font-size: 90%;
+  line-height: 40px;
+  margin-bottom: 0;
+  text-transform: none;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.copyright {
+  color: white;
+}
+
+.fa-ellipsis-h {
+  color: white;
+  padding: 2rem 0;
+}
