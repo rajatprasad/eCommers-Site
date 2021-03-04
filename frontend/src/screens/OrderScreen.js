@@ -6,7 +6,6 @@ import { Row, Col, ListGroup, Image, Card, Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
-import { CART_SAVE_PAYMENT_METHOD } from '../constants/cartConstants'
 import {
   getOrderDetails,
   payOrder,
@@ -158,6 +157,10 @@ const OrderScreen = ({ match, history }) => {
                         </Col>
                         <Col md={4}>
                           {item.qty} x ₹{item.price} = ₹{item.qty * item.price}
+                        </Col>
+                        <Col md={4}>
+                          <p> Remarks:{item.remarks} </p> 
+                          <p>Gift: {item.gift}</p>
                         </Col>
                       </Row>
                     </ListGroup.Item>

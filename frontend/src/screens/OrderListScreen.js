@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import { listOrders } from '../actions/orderActions'
+import ReactHTMLTableToExcel from 'react-html-table-to-excel';
 
 
 const OrderListScreen = ({ history }) => {
@@ -32,7 +33,15 @@ const OrderListScreen = ({ history }) => {
       ) : error ? (
         <Message variant='danger'>{error}</Message>
       ) : (
-        <Table striped bordered hover responsive className='table-sm'>
+        <>
+        <ReactHTMLTableToExcel
+                    id="test-table-xls-button"
+                    className="download-table-xls-button"
+                    table="table-to-xls"
+                    filename="Orderxls"
+                    sheet="tablexls"
+                    buttonText="Export on Excel"/>
+        <Table striped bordered hover responsive className='table-sm' id="table-to-xls">
           <thead>
             <tr>
               <th>ID</th>
@@ -51,7 +60,7 @@ const OrderListScreen = ({ history }) => {
                 <td>{order._id}</td>
                 <td>{order.user && order.user.name}</td>
                 <td>{order.createdAt.substring(0, 10)}</td>
-                <td>${order.totalPrice}</td>   
+                <td>₹{order.totalPrice}</td>   
                 <td>
                   {order.isPaid ? (
                     order.paidAt.substring(0, 10)
@@ -81,6 +90,7 @@ const OrderListScreen = ({ history }) => {
             )).reverse()}
           </tbody>
         </Table>
+        </>
       )}
     </>
   )

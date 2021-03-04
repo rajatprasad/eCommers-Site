@@ -5,10 +5,26 @@ import { Row, Col, ListGroup, Image, Form, Button, Card } from 'react-bootstrap'
 import Message from '../components/Message'
 import { addToCart, removeFromCart } from '../actions/cartActions'
 
-const CartScreen = ({ match, location, history }) => {
+const CartScreen = ({ match, location, history, }) => {
   const productId = match.params.id
 
-  const qty = location.search ? Number(location.search.split('=')[1]) : 1
+  const remarks = location.search.split('&remarks=')[1] ? (location.search.split('remarks=')[1]) : ""
+ 
+  // Added condition for gift because ot was taking remarks when null
+  
+  let gift = location.search.split('gift=')[1] ? (location.search.split('gift=')[1]).slice(0,3) : "No"
+  if (gift == "&re"){
+    gift = "No"
+  }
+ 
+  // const qty = location.search ? Number(location.search.split('=')[1]) : 1
+
+  
+  // const qty = location.search.split('qty=')[1] ? Number(location.search.split('qty=')[1]) : 1
+  const qty = 1
+
+
+  console.log(qty,remarks,gift)
 
   const dispatch = useDispatch()
 
@@ -17,9 +33,10 @@ const CartScreen = ({ match, location, history }) => {
 
   useEffect(() => {
     if (productId) {
-      dispatch(addToCart(productId, qty))
+      dispatch(addToCart(productId, qty, remarks,gift))
+      console.log(qty)
     }
-  }, [dispatch, productId, qty])
+  }, [dispatch, productId, qty, remarks,gift])
 
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id))
@@ -30,6 +47,8 @@ const CartScreen = ({ match, location, history }) => {
   }
 
   return (
+    <>
+    {/* <p>Show here - {gift} - {remarks} - {qty}</p> */}
     <Row>
       <Col md={8}>
         <h1>Shopping Cart</h1>
@@ -45,10 +64,11 @@ const CartScreen = ({ match, location, history }) => {
                   <Col md={2}>
                     <Image src={item.image} alt={item.name} fluid rounded />
                   </Col>
-                  <Col md={3}>
+                  <Col md={2}>
                     <Link to={`/product/${item.product}`}>{item.name}</Link>
                   </Col>
                   <Col md={2}>₹{item.price}</Col>
+                  <Col md={2}>Quantity:</Col>
                   <Col md={2}>
                     <Form.Control
                       as='select'
@@ -108,6 +128,7 @@ const CartScreen = ({ match, location, history }) => {
         </Card>
       </Col>
     </Row>
+    </>
   )
 }
 
