@@ -40,6 +40,7 @@ const UserListScreen = ({ history }) => {
       ) : error ? (
         <Message variant='danger'>{error}</Message>
       ) : (
+        <>
         <Table striped bordered hover responsive className='table-sm'>
           <thead>
             <tr>
@@ -83,6 +84,7 @@ const UserListScreen = ({ history }) => {
             )).reverse()}
           </tbody>
         </Table>
+        </>
       )}
     </>
   )

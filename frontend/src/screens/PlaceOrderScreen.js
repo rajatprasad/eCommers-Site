@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Button, Row, Col, ListGroup, Image, Card } from 'react-bootstrap'
+import { Button, Row, Col, ListGroup, Image, Card,Form } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import CheckoutSteps from '../components/CheckoutSteps'
@@ -107,6 +107,14 @@ const PlaceOrderScreen = ({ history }) => {
                         <Col md={4}>
                           {item.qty} x ₹{item.price} = ₹{item.qty * item.price}
                         </Col>
+
+                        <Col md={4}>
+                          <p>Remarks:{item.remarks}</p>
+
+                          {item.gift === ""? "" :
+                          <p>Gift:{item.gift}</p>
+                          }
+                        </Col>
                       </Row>
                     </ListGroup.Item>
                   ))}
@@ -145,6 +153,7 @@ const PlaceOrderScreen = ({ history }) => {
                   <Col>₹{cart.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
+
               <ListGroup.Item>
                 {error && <Message variant='danger'>{error}</Message>}
               </ListGroup.Item>
