@@ -1,25 +1,31 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
-import { Row, Col, Image, ListGroup, Card, Button, Form} from 'react-bootstrap'
-import Rating from '../components/Rating'
-import Message from '../components/Message'
-import Loader from '../components/Loader'
-import Meta from '../components/Meta'
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  Row,
+  Col,
+  Image,
+  ListGroup,
+  Card,
+  Button,
+  Form,
+} from "react-bootstrap";
+import Rating from "../components/Rating";
+import Message from "../components/Message";
+import Loader from "../components/Loader";
+import Meta from "../components/Meta";
 import {
   listProductDetails,
   createProductReview,
 } from "../actions/productActions";
 import { PRODUCT_CREATE_REVIEW_RESET } from "../constants/productConstants";
 
-
 const ProductScreen = ({ history, match }) => {
-
-  const [qty, setQty] = useState(1)
-  const [rating, setRating] = useState(0)
-  const [comment, setComment] = useState('')
-  const [remarks, setRemarks] = useState('')
-  const [gift,setGift] =  useState('')
+  const [qty, setQty] = useState(1);
+  const [rating, setRating] = useState(0);
+  const [comment, setComment] = useState("");
+  const [remarks, setRemarks] = useState("");
+  const [gift, setGift] = useState("");
 
   const dispatch = useDispatch();
 
@@ -42,14 +48,16 @@ const ProductScreen = ({ history, match }) => {
       setComment("");
     }
     if (!product._id || product._id !== match.params.id) {
-      dispatch(listProductDetails(match.params.id)) 
-      dispatch({ type: PRODUCT_CREATE_REVIEW_RESET })
-    }  
-  }, [dispatch, match, successProductReview, remarks])
+      dispatch(listProductDetails(match.params.id));
+      dispatch({ type: PRODUCT_CREATE_REVIEW_RESET });
+    }
+  }, [dispatch, match, successProductReview, remarks]);
 
   const addToCartHandler = () => {
-    history.push(`/cart/${match.params.id}?qty=${qty}&gift=${gift}&remarks=${remarks}`)
-  }
+    history.push(
+      `/cart/${match.params.id}?qty=${qty}&gift=${gift}&remarks=${remarks}`
+    );
+  };
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -84,20 +92,19 @@ const ProductScreen = ({ history, match }) => {
                 </ListGroup.Item>
 
                 <ListGroup.Item>
-                  Description: {product.description}
-                </ListGroup.Item>
-                
-                <ListGroup.Item>Price: ₹{product.price}</ListGroup.Item>
-
-                <ListGroup.Item>Category: {product.category}</ListGroup.Item>
-
-                <ListGroup.Item>
                   <Rating
                     value={product.rating}
                     text={`${product.numReviews} reviews`}
                   />
                 </ListGroup.Item>
 
+                <ListGroup.Item>Price: ₹{product.price}</ListGroup.Item>
+
+                <ListGroup.Item>
+                  Description: {product.description}
+                </ListGroup.Item>
+
+                <ListGroup.Item>Category: {product.category}</ListGroup.Item>
               </ListGroup>
             </Col>
             <Col md={3}>
@@ -122,34 +129,34 @@ const ProductScreen = ({ history, match }) => {
                   </ListGroup.Item>
 
                   <ListGroup.Item>
-                    <Row>  
-                      <Col>Remarks:</Col>
-                      <Col>
+                    <Row>
+                      <Row className="pl-4">Remarks:</Row>
+
+                      {/* <Row> */}
                       <Form.Control
-                            as='input'
-                            value={remarks}
-                            placeholder = 'Measurement'
-                            onChange={(e) => setRemarks(e.target.value)}
-                          >
-                            </Form.Control>
-                      </Col>
+                        as="textarea"
+                        rows={3}
+                        value={remarks}
+                        placeholder="Measurement"
+                        onChange={(e) => setRemarks(e.target.value)}
+                      ></Form.Control>
+                      {/* </Row> */}
                     </Row>
                   </ListGroup.Item>
 
                   <ListGroup.Item>
-                    <Row>  
-                    <Col>This items contains a gift</Col>
+                    <Row>
+                      <Col>This items contains a gift</Col>
                       <Col>
-                      <Form.Control
-                            as='select'
-                            value={gift}
-                            label="This item contains a gift"
-                            onChange={(e) => setGift(e.target.value)}
-                          >
-                            <option default>No</option>
-                            <option>Yes </option>
-                            
-                            </Form.Control>
+                        <Form.Control
+                          as="select"
+                          value={gift}
+                          label="This item contains a gift"
+                          onChange={(e) => setGift(e.target.value)}
+                        >
+                          <option default>No</option>
+                          <option>Yes </option>
+                        </Form.Control>
                       </Col>
                     </Row>
                   </ListGroup.Item>
@@ -256,7 +263,7 @@ const ProductScreen = ({ history, match }) => {
                 </ListGroup.Item>
               </ListGroup>
             </Col>
-          </Row> 
+          </Row>
         </>
       )}
     </>

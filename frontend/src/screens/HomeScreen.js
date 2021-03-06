@@ -11,6 +11,7 @@ import Meta from "../components/Meta";
 import { listProducts } from "../actions/productActions";
 import "./HomeScreen.css";
 import Zoom from "react-reveal/Zoom";
+import Toprated from "../components/Toprated";
 
 const HomeScreen = ({ match }) => {
   const keyword = match.params.keyword;
@@ -30,7 +31,10 @@ const HomeScreen = ({ match }) => {
     <div className="homescreen">
       <Meta />
       {!keyword ? (
-        <ProductCarousel />
+        <div>
+          <ProductCarousel />
+          {pageNumber == 1 ? <Toprated /> : null}
+        </div>
       ) : (
         <Link to="/" className="btn btn-light">
           Go Back
@@ -49,18 +53,20 @@ const HomeScreen = ({ match }) => {
         <div className="product">
           <Row>
             {products.map((product) => (
-              <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+              <Col key={product._id} xs={12} sm={12} md={6} lg={4} xl={3}>
                 <Zoom duration={1100}>
                   <Product product={product} />
                 </Zoom>
               </Col>
             ))}
           </Row>
-          <Paginate
-            pages={pages}
-            page={page}
-            keyword={keyword ? keyword : ""}
-          />
+          <div className="page">
+            <Paginate
+              pages={pages}
+              page={page}
+              keyword={keyword ? keyword : ""}
+            />
+          </div>
         </div>
       )}
     </div>

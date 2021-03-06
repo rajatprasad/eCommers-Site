@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.rproduct__card {
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1), 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+  /* box-shadow: 0 0 0 1px #e2e9ed; */
+  transition: 0.2s all;
+  /* max-width: 360px; */
+}
+
+.rproduct__card:hover {
+  transform-style: preserve-3d;
+  /* box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1), 0px 0px 10px rgba(0, 0, 0, 0.1); */
+  box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+
+.product__name {
+  font-family: "Roboto", sans-serif;
+  /* font-weight: 500; */
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
+.product__image {
+  object-fit: contain;
+}
+
+.product__toprated {
+  margin-left: 50px;
+  margin-right: 50px;
+  padding-right: 0px !important;
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding: 20px;
+}
+
+.product__toprated::-webkit-scrollbar {
+  display: none;
+}
+
+/* .product__main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
