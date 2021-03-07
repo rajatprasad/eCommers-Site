@@ -160,7 +160,7 @@ const OrderScreen = ({ match, history }) => {
                           {item.qty} x ₹{item.price} = ₹{item.qty * item.price}
                         </Col>
                         <Col md={4}>
-                          <p> Remarks:{item.remarks} </p> 
+                          <p> Remarks:{item.remarks} </p>
                           <p>Gift: {item.gift}</p>
                         </Col>
                       </Row>
@@ -213,11 +213,16 @@ const OrderScreen = ({ match, history }) => {
                   {!sdkReady ? (
                     <Loader />
                   ) : (
-                    <PayPalButton
-                      amount={order.totalPrice}
-                      currency="INR"
-                      onSuccess={successPaymentHandler}
-                    />
+                    <div>
+                      <PayPalButton
+                        amount={order.totalPrice}
+                        currency="INR"
+                        onSuccess={successPaymentHandler}
+                      />
+                      <a href="https://rzp.io/l/ajiiDwo">
+                        <Button>RAZOR PAY</Button>
+                      </a>
+                    </div>
                   )}
                 </ListGroup.Item>
               )}
