@@ -137,9 +137,10 @@ const ProductScreen = ({ history, match }) => {
                         as="textarea"
                         rows={3}
                         value={remarks}
-                        placeholder="Measurement"
+                        placeholder="Kid's Measurement"
                         onChange={(e) => setRemarks(e.target.value)}
                       ></Form.Control>
+                      <p>{remarks}</p>
                       {/* </Row> */}
                     </Row>
                   </ListGroup.Item>
