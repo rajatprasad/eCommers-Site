@@ -18,36 +18,35 @@ import {
 } from "../constants/orderConstants";
 
 const OrderScreen = ({ match, history }) => {
-
   function loadScript(src) {
     return new Promise((resolve) => {
-        const script = document.createElement("script");
-        script.src = src;
-        script.onload = () => {
-            resolve(true);
-        };
-        script.onerror = () => {
-            resolve(false);
-        };
-        document.body.appendChild(script);
+      const script = document.createElement("script");
+      script.src = src;
+      script.onload = () => {
+        resolve(true);
+      };
+      script.onerror = () => {
+        resolve(false);
+      };
+      document.body.appendChild(script);
     });
-}
+  }
 
-async function displayRazorpay() {
+  async function displayRazorpay() {
     const res = await loadScript(
-        "https://checkout.razorpay.com/v1/checkout.js"
+      "https://checkout.razorpay.com/v1/checkout.js"
     );
 
     if (!res) {
-        alert("Razorpay SDK failed to load. Are you online?");
-        return;
+      alert("Razorpay SDK failed to load. Are you online?");
+      return;
     }
 
     const result = await axios.post("/payment/orders");
 
     if (!result) {
-        alert("Server error. Are you online?");
-        return;
+      alert("Server error. Are you online?");
+      return;
     }
 
     const { amount, id: order_id, currency } = result.data;
@@ -87,7 +86,7 @@ async function displayRazorpay() {
 
     const paymentObject = new window.Razorpay(options);
     paymentObject.open();
-}
+  }
 
   const orderId = match.params.id;
 
@@ -230,7 +229,7 @@ async function displayRazorpay() {
                           {item.qty} x ₹{item.price} = ₹{item.qty * item.price}
                         </Col>
                         <Col md={4}>
-                          <p> Remarks:{item.remarks} </p> 
+                          <p> Remarks:{item.remarks} </p>
                           <p>Gift: {item.gift}</p>
                         </Col>
                       </Row>
@@ -268,7 +267,7 @@ async function displayRazorpay() {
               <ListGroup.Item>
                 <Row>
                   <Col>Total</Col>
-                <Col>₹{order.totalPrice}</Col>
+                  <Col>₹{order.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
 
@@ -283,18 +282,18 @@ async function displayRazorpay() {
                   {loadingPay && <Loader />}
                   {!sdkReady ? (
                     <>
-                    <Loader />
+                      <Loader />
                     </>
                   ) : (
                     <>
-                    <Button onClick={displayRazorpay}>
-                      Pay {order.totalPrice}
+                      <Button onClick={displayRazorpay}>
+                        Pay {order.totalPrice}
                       </Button>
-                    <PayPalButton
-                      amount={order.totalPrice}
-                      currency="INR"
-                      onSuccess={successPaymentHandler}
-                    />
+                      <PayPalButton
+                        amount={order.totalPrice}
+                        currency="INR"
+                        onSuccess={successPaymentHandler}
+                      />
                     </>
                   )}
                 </ListGroup.Item>
