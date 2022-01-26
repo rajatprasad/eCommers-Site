@@ -1,7 +1,9 @@
-import React from "react";
+import React,{ useState} from "react";
 import "./Footer.css";
+import {Button, Modal} from "react-bootstrap"
 
 const Footer = () => {
+  
   return (
     <div className="footer">
       <footer>
@@ -10,26 +12,26 @@ const Footer = () => {
             <div className="col-md-4 footer-column">
               <ul className="nav flex-column">
                 <li className="nav-item">
-                  <span className="footer-title">Product</span>
+                  <span className="footer-title">Tickly Tots</span>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    Product 1
+                    Terms and conditions
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    Product 2
+                    Shipping 
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    Plans & Prices
+                    {/* Privacy Policy */}
                   </a>
-                </li>
+                </li> 
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    Frequently asked questions
+                   Returns and Cancellations
                   </a>
                 </li>
               </ul>
@@ -46,12 +48,12 @@ const Footer = () => {
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    Job postings
+                    Privacy Policy
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    News and articles
+                    
                   </a>
                 </li>
               </ul>
@@ -63,22 +65,22 @@ const Footer = () => {
                 </li>
                 <li className="nav-item">
                   <span className="nav-link">
-                    <i className="fas fa-phone"></i>+47 45 80 80 80
+                    <i className="fas fa-phone"></i>+91 8073132809 ( Monday to Saturday (10AM to 6PM))
                   </span>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    <i className="fas fa-comments"></i>Live chat
+                  <a className="nav-link" href="https://api.whatsapp.com/send?phone=918494829712" target="_blank" title="WhatsApp">
+                    <i className="fab fa-whatsapp" aria-hidden="true"></i> +91 8494829712
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <a className="nav-link" href="mailto:b4xabhishek@gmail.com" aria-hidden="true">
                     <i className="fas fa-envelope"></i>Contact us
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    <i className="fas fa-star"></i>Give feedback
+                    <i className="fas fa-whatsapp"></i>
                   </a>
                 </li>
               </ul>
@@ -92,24 +94,24 @@ const Footer = () => {
           <div className="row text-center">
             <div className="col-md-4 box">
               <span className="copyright quick-links">
-                Copyright &copy; Your Website{" "}
-                <script>document.write(new Date().getFullYear())</script>
+                Copyright &copy; TicklyTots{" "}
+                {(new Date().getFullYear())}
               </span>
             </div>
             <div className="col-md-4 box">
               <ul className="list-inline social-buttons">
                 <li className="list-inline-item">
-                  <a href="#">
-                    <i className="fab fa-twitter"></i>
+                  <a href="https://api.whatsapp.com/send?phone=918494829712">
+                    <i className="fab fa-whatsapp"></i>
                   </a>
                 </li>
                 <li className="list-inline-item">
-                  <a href="#">
+                  <a href="https://www.facebook.com/ticklytots/">
                     <i className="fab fa-facebook-f"></i>
                   </a>
                 </li>
                 <li className="list-inline-item">
-                  <a href="https://www.instagram.com/invites/contact/?i=1212jq1qxz91o&utm_content=kher6ye">
+                  <a href="https://www.instagram.com/ticklytots/">
                     <i className="fab fa-instagram"></i>
                   </a>
                 </li>
@@ -118,10 +120,10 @@ const Footer = () => {
             <div className="col-md-4 box">
               <ul className="list-inline quick-links">
                 <li className="list-inline-item">
-                  <a href="#">Privacy Policy</a>
+                  <a href="#"></a>
                 </li>
                 <li className="list-inline-item">
-                  <a href="#">Terms of Use</a>
+                  <a href="#"></a>
                 </li>
               </ul>
             </div>

@@ -1,10 +1,16 @@
 import express from "express";
 import dotenv from "dotenv";
 import Razorpay from "razorpay";
+
+
 dotenv.config();
 const router = express.Router();
 
+router.get("/:id/pay", (req, res) =>{
+    console.log(req.body)
+})
 
+// razorpay
 router.post("/orders", async (req, res) => {
     try {
         const instance = new Razorpay({
@@ -13,7 +19,7 @@ router.post("/orders", async (req, res) => {
         });
 
         const options = {
-            amount: 50000, // amount in smallest currency unit
+            amount:698687 , // amount in smallest currency unit
             currency: "INR",
             receipt: "receipt_order_74394",
         };

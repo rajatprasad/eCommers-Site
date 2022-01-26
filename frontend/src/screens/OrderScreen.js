@@ -56,7 +56,7 @@ async function displayRazorpay() {
         key: "rzp_test_6k3aYIgHjvBMLL", // Enter the Key ID generated from the Dashboard
         amount: amount.toString(),
         currency: currency,
-        name: "Soumya Corp.",
+        name: "Abhishek Verma",
         description: "Test Transaction",
         // image: ".../public/images/1.png",
         order_id: order_id,
@@ -78,7 +78,7 @@ async function displayRazorpay() {
             contact: "9999999999",
         },
         notes: {
-            address: "Soumya Dey Corporate Office",
+            address: "Tickly Corporate Office",
         },
         theme: {
             color: "#61dafb",

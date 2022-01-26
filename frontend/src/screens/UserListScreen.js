@@ -41,6 +41,19 @@ const UserListScreen = ({ history }) => {
         <Message variant='danger'>{error}</Message>
       ) : (
         <>
+                {/* Box starts */}
+                <div className="row">
+                    <div className="col-sm-6">
+                      <div className="card">
+                        <div className="card-body">
+                          <h3 className="card-title">{users.length - 1}
+                        </h3>
+                          <p className="card-text">Total Users (except Admin user)</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+        {/* Box Ends  */}
         <Table striped bordered hover responsive className='table-sm'>
           <thead>
             <tr>

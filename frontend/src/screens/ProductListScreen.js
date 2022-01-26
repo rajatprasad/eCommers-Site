@@ -92,9 +92,26 @@ const ProductListScreen = ({ history, match }) => {
         <Message variant='danger'>{error}</Message>
       ) : (
         <>
+        {/* Box starts */}
+        <div className="row">
+  <div className="col-sm-6">
+    <div className="card">
+      <div className="card-body">
+        <h5 className="card-title">{products.length}
+      </h5>
+        <p className="card-text">Total Products</p>
+        <Button className='my-3' onClick={createProductHandler}>
+            <i className='fas fa-plus'></i> Create Product
+          </Button>
+      </div>
+    </div>
+  </div>
+</div>
+        {/* Box Ends  */}
           <Table striped bordered hover responsive className='table-sm'>
             <thead>
               <tr>
+                {/* <th>S.No</th> */}
                 <th>ID</th>
                 <th>NAME</th>
                 <th>PRICE</th>
@@ -106,11 +123,13 @@ const ProductListScreen = ({ history, match }) => {
             <tbody>
               {products.map((product) => (
                 <tr key={product._id}>
+                  {/* <td>{(products.indexOf(product) + 1)}</td> */}
                   <td>{product._id}</td>
                   <td>{product.name}</td>
                   <td>₹{product.price}</td>
                   <td>{product.category}</td>
                   <td>{product.brand}</td>
+                  
                   <td>
                     <LinkContainer to={`/admin/product/${product._id}/edit`}>
                       <Button variant='light' className='btn-sm'>

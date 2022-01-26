@@ -25,6 +25,12 @@ const OrderListScreen = ({ history }) => {
     }
   }, [dispatch, history, userInfo])
 
+
+  let DeliveredCount = 0
+  let PaidOrders = 0
+  let TotalAmountCollected = 0
+
+
   return (
     <>
       <h1>Orders</h1>
@@ -34,13 +40,75 @@ const OrderListScreen = ({ history }) => {
         <Message variant='danger'>{error}</Message>
       ) : (
         <>
-        <ReactHTMLTableToExcel
+         {/* Box starts */}
+          <div className="row">
+             <div className="col-sm-6">
+                <div className="card">
+                        <div className="card-body">
+                          <h3 className="card-title">{orders.length}
+                        </h3>
+                          <p className="card-text">Total Orders Placed</p>
+                          <ReactHTMLTableToExcel
                     id="test-table-xls-button"
-                    className="download-table-xls-button"
+                    className="download-table-xls-button p-2"
                     table="table-to-xls"
                     filename="Orderxls"
                     sheet="tablexls"
-                    buttonText="Export on Excel"/>
+                    buttonText="Export to Excel"/>
+                        </div>
+                      </div>
+                    </div>
+                    {/* Delivered Box */}
+                    <div className="col-sm-6">
+                <div className="card">
+                        <div className="card-body">
+                          <h3 className="card-title">
+                            { orders.map((order) =>                                 
+                                  { 
+                                    
+                                    for (let i = 1; i <= orders.length; i++) 
+                                  {
+                                    if ((order.isDelivered) == true) DeliveredCount = DeliveredCount + 1
+                                        console.log(DeliveredCount,order.isDelivered)
+                                      }
+                                   }       
+                            )
+                            }
+                            <p>{DeliveredCount/orders.length}</p>
+
+
+                        </h3>
+                          <p className="card-text">Total Orders Delivered</p>
+                        </div>
+                      </div>
+                    </div>
+                    {/* Paid Orders */}
+                    <div className="col-sm-6">
+                <div className="card">
+                        <div className="card-body">
+                          <h3 className="card-title">
+                            { orders.map((order) =>                                 
+                                  { 
+                                    
+                                    for (let i = 1; i <= orders.length; i++) 
+                                    if (order.isPaid == true) PaidOrders = PaidOrders + 1
+                                    if(order.isPaid == true) TotalAmountCollected = TotalAmountCollected +order.totalPrice                                
+                                   }       
+                            )
+                            }
+                            
+                            <p>₹{TotalAmountCollected}</p>
+
+
+                        </h3>
+                          <p className="card-text">Total Earnings </p>
+                          <p>Total Paid Orders {PaidOrders/orders.length}</p>
+                        </div>
+                      </div>
+                    </div>
+
+                </div>
+        {/* Box Ends  */}
         <Table striped bordered hover responsive className='table-sm' id="table-to-xls">
           <thead>
             <tr>
