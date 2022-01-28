@@ -101,7 +101,7 @@ const OrderListScreen = ({ history }) => {
 
 
                         </h3>
-                          <p className="card-text">Total Earnings </p>
+                          <p className="card-text">Total Earnings in ₹</p>
                           <p>Total Paid Orders {PaidOrders/orders.length}</p>
                         </div>
                       </div>
