@@ -106,8 +106,8 @@ const OrderListScreen = ({ history }) => {
                         </div>
                       </div>
                     </div>
-
                 </div>
+                <br></br>
         {/* Box Ends  */}
         <Table striped bordered hover responsive className='table-sm' id="table-to-xls">
           <thead>
